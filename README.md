@@ -27,10 +27,60 @@ Book App
 Time estimate
 Number and name of feature: #1 Set Up
 
-Estimate of time needed to complete: _____
+Estimate of time needed to complete: 2hr
 
-Start time: _____
+Start time: 2:30pm
 
-Finish time: _____
+Finish time: 3:30pm
 
-Actual time needed to complete: _____
+Actual time needed to complete: 1hr
+
+Number and name of feature: #2
+
+Estimate of time needed to complete: 2hr
+
+Start time: 3:30pm
+
+Finish time: 
+
+Actual time needed to complete: 
+
+Number and name of feature: #3 
+
+Estimate of time needed to complete: 2hr
+
+Start time: 
+
+Finish time: 
+
+Actual time needed to complete: 
+
+Number and name of feature: #4 
+
+Estimate of time needed to complete: 2hr
+
+Start time: 
+
+Finish time: 
+
+Actual time needed to complete: 
+
+Number and name of feature: #5 
+
+Estimate of time needed to complete: 2hr
+
+Start time: 
+
+Finish time: 
+
+Actual time needed to complete: 
+
+Number and name of feature: #6 
+
+Estimate of time needed to complete: 2hr
+
+Start time: 
+
+Finish time: 
+
+Actual time needed to complete: 
