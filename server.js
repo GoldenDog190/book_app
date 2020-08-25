@@ -55,7 +55,9 @@ function Books (bookJsonData) {
   //console.log(bookJsonData.volumeInfo);
 this.title = bookJsonData.volumeInfo.title;
 this.author = bookJsonData.volumeInfo.authors;
-this.image = bookJsonData.volumeInfo.image;
+let image_url = bookJsonData.volumeInfo.imageLinks && bookJsonData.volumeInfo.imageLinks.thumbnail ? bookJsonData.volumeInfo.imageLinks. thumbnail : 'https://i.imgur.com/J5LVHEL.jpg';
+image_url = image_url.replace(/^http:\/\//i, 'https://');
+this.image_url = image_url;
 this.description = bookJsonData.volumeInfo.description;
 
 }
