@@ -4,6 +4,7 @@
 const express = require('express');
 require('dotenv').config();
 const superagent = require('superagent');
+const pg = require('pg');
 
 //global varables
 const app = express();

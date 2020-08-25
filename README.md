@@ -100,7 +100,7 @@ Number and name of feature: #1
 
 Estimate of time needed to complete: 2hr
 
-Start time: 
+Start time: 3:00pm
 
 Finish time: 
 
