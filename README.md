@@ -3,11 +3,12 @@ Book App
 
 # Project Name
 
-**Author**: Your Name Goes Here
+**Author**: Amelia Waggoner
 **Version**: 1.0.0 (increment the patch/fix version number if you make more commits past your first submission)
 
 ## Overview
 <!-- Provide a high level overview of what this application is and why you are building it, beyond the fact that it's an assignment for a Code 301 class. (i.e. What's your problem domain?) -->
+
 
 ## Getting Started
 <!-- What are the steps that a user must take in order to build this app on their own machine and get it running? -->
@@ -49,38 +50,38 @@ Number and name of feature: #3
 
 Estimate of time needed to complete: 2hr
 
-Start time: 
+Start time: 4:30pm
 
-Finish time: 
+Finish time: 6:00pm
 
-Actual time needed to complete: 
+Actual time needed to complete: 1hr 30min
 
 Number and name of feature: #4 
 
 Estimate of time needed to complete: 2hr
 
-Start time: 
+Start time: 6:00pm
 
-Finish time: 
+Finish time: 6:15pm
 
-Actual time needed to complete: 
+Actual time needed to complete: 15min
 
 Number and name of feature: #5 
 
 Estimate of time needed to complete: 2hr
 
-Start time: 
+Start time: 6:15pm
 
-Finish time: 
+Finish time: 6:45pm
 
-Actual time needed to complete: 
+Actual time needed to complete: 30min
 
 Number and name of feature: #6 
 
-Estimate of time needed to complete: 2hr
+Estimate of time needed to complete: 1hr
 
-Start time: 
+Start time: 6:45pm
 
-Finish time: 
+Finish time: 7:00pm
 
-Actual time needed to complete: 
+Actual time needed to complete: 15min
