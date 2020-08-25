@@ -43,7 +43,7 @@ function getBooksData(request, response){
         const newBookArr = superAgentResult.map(index => {
           return new Books (index);
         })
-        response.send(newBookArr);
+        response.render('pages/searches/show', {newBookArr : newBookArr});
       })
     .catch(error => {
       response.status(500).render('pages/error');
@@ -55,9 +55,9 @@ function Books (bookJsonData) {
   //console.log(bookJsonData.volumeInfo);
 this.title = bookJsonData.volumeInfo.title;
 this.author = bookJsonData.volumeInfo.authors;
-let image_url = bookJsonData.volumeInfo.imageLinks && bookJsonData.volumeInfo.imageLinks.thumbnail ? bookJsonData.volumeInfo.imageLinks. thumbnail : 'https://i.imgur.com/J5LVHEL.jpg';
-image_url = image_url.replace(/^http:\/\//i, 'https://');
-this.image_url = image_url;
+let img_url = bookJsonData.volumeInfo.imageLinks && bookJsonData.volumeInfo.imageLinks.thumbnail ? bookJsonData.volumeInfo.imageLinks. thumbnail : 'https://i.imgur.com/J5LVHEL.jpg';
+img_url = img_url.replace(/^http:\/\//i, 'https://');
+this.img_url = img_url;
 this.description = bookJsonData.volumeInfo.description;
 
 }

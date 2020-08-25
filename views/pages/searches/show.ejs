@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/reset.css">
+  <link rel="stylesheet" href="/base.css">
+  <link rel="stylesheet" href="/layout-float.css">
+  <link rel="stylesheet" href="/module.css">
+</head>
+<body>
+  <h1>Results</h1>
+  <% newBookArr %>
+  <ul>
+    <% for(let i =0; i < newBookArr.length; i++) {%>
+    <li>
+      <h2><% newBookArr[i].title %></h2>
+      <img src ="<%= newBookArr[i].image_url %>" alt="">
+
+    </li>
+    <% } %>
+  </ul>
+</body>
+</html>
