@@ -41,9 +41,9 @@ Estimate of time needed to complete: 2hr
 
 Start time: 3:30pm
 
-Finish time: 
+Finish time: 4:00pm
 
-Actual time needed to complete: 
+Actual time needed to complete: 30min
 
 Number and name of feature: #3 
 
