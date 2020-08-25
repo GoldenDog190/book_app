@@ -9,6 +9,8 @@ const superagent = require('superagent');
 const app = express();
 const PORT = process.env.PORT || 3001;
 app.use(express.static('public'));
+app.use(express.urlencoded({extended: true}));
+
 //express configs
 app.set('view engine', 'ejs');
 
@@ -22,35 +24,38 @@ app.get('/searches/new', (request, response) => {
 });
 
 //route
-app.get('/searches', getBooksData);
+app.post('/searches', getBooksData);
 
 function getBooksData(request, response){
-  let searchTitle = request.query.title;
-  let searchAuthor = request.query.author;
-  const urlToAuthor = `https://www.googleapis.com/books/v1/volumes?q=+inauthor:${searchAuthor}`;
-  const urlToTitle = `https://www.googleapis.com/books/v1/volumes?q=+intitle:${searchTitle}`;
+  console.log(request.body);
+  let searchBody = request.body.search;
+
+  let searchType = request.body.type;
+  const urlToBook = `https://www.googleapis.com/books/v1/volumes?q=+in${searchType}:${searchBody}`;
 
 
-    superagent.get(urlToAuthor, urlToTitle)
+    superagent.get(urlToBook)
 
       .then(result => {
-        const superAgentResult = result.body;
+        const superAgentResult = result.body.items;
         console.log(result.body);
-        const newBookArr = bookJsonData.map(index => {
+        const newBookArr = superAgentResult.map(index => {
           return new Books (index);
         })
         response.send(newBookArr);
       })
     .catch(error => {
-      response.status(500).send(error.message);
+      response.status(500).render('pages/error');
     });
 }
 
 //constructor
 function Books (bookJsonData) {
-this.title = bookJsonData.title;
-this.author = bookJsonData.author;
-this.image = `https://i.imgur.com/J5LVHEL.jpg`;
+  //console.log(bookJsonData.volumeInfo);
+this.title = bookJsonData.volumeInfo.title;
+this.author = bookJsonData.volumeInfo.authors;
+this.image = bookJsonData.volumeInfo.image;
+this.description = bookJsonData.volumeInfo.description;
 
 }
 
