@@ -9,21 +9,34 @@
   <link rel="stylesheet" href="searches/module.css">
   <title>Document</title>
 </head>
-<body>
-  <h1>Author and Title</h1>
-  <form action="/searches" method="POST">
-   <fieldset>
-     <legend>Search Books</legend>
-     <label for="search">Search:</label>
-     <input type="text" name="search">
-     <select name="type">
-       <option value="author">Author</option>
-       <option value="title">Title</option>
-     </select>
-     <input type="submit" value="search">
-   </fieldset>
-  
-  </form>
- 
+<body class="form-pg">
+  <header>
+    <h1>Best Books</h1>
+    <div></div>
+    <div></div>
+    <div></div>
+  </header>
+
+  <main>
+    <form action="/searches" method="POST">
+     <fieldset>
+       <legend>Search by Title or Author</legend>
+       <label for="search">Enter a title or author:</label>
+       <input type="text" name="search">
+       <select name="type">
+         <option value="author">Author</option>
+         <option value="title">Title</option>
+       </select>
+       <input type="submit" value="Search the Google Books API">
+     </fieldset>
+    </form>
+  </main>
+  <footer>
+    <!-- https://www.w3schools.com/howto/howto_css_circles.asp -->
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+  </footer>
 </body>
 </html>
