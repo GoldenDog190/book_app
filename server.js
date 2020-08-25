@@ -28,7 +28,7 @@ app.get('/searches/new', (request, response) => {
 app.post('/searches', getBooksData);
 
 function getBooksData(request, response){
-  console.log(request.body);
+  //console.log(request.body);
   let searchBody = request.body.search;
 
   let searchType = request.body.type;
@@ -39,14 +39,16 @@ function getBooksData(request, response){
 
       .then(result => {
         const superAgentResult = result.body.items;
-        console.log(result.body);
+        //console.log(result.body);
         const newBookArr = superAgentResult.map(index => {
           return new Books (index);
         })
         response.render('pages/searches/show', {newBookArr : newBookArr});
       })
     .catch(error => {
-      response.status(500).render('pages/error');
+      // response.status(500).render('pages/error');
+      console.log(error);
+      response.status(500).send(error);
     });
 }
 
@@ -56,10 +58,10 @@ function Books (bookJsonData) {
 this.title = bookJsonData.volumeInfo.title;
 this.author = bookJsonData.volumeInfo.authors;
 let img_url = bookJsonData.volumeInfo.imageLinks && bookJsonData.volumeInfo.imageLinks.thumbnail ? bookJsonData.volumeInfo.imageLinks. thumbnail : 'https://i.imgur.com/J5LVHEL.jpg';
-img_url = img_url.replace(/^http:\/\//i, 'https://');
+this.img_url = img_url.replace(/^http:\/\//i, 'https://');
 this.img_url = img_url;
 this.description = bookJsonData.volumeInfo.description;
-
+this.isbn = bookJsonData.volumeInfo.industryIdentifiers[1] ? bookJsonData.volumeInfo.industryIdentifiers[1].industryIdentifiers : '';
 }
 
 //start app
