@@ -1,13 +1,17 @@
-/* @media only screen and (max-width: 760) { */
+/* @media only screen and (max-width: 760px) { */
 header {
   background-color: cornflowerblue;
+  color: rgb(4, 4, 55);
+  font-family: cursive;
+  font-size: 30px;
   padding: 50px;
 }
 
 h1 {
   background-color: cornflowerblue;
   color: rgb(4, 4, 55);
-  /* float: left; */
+  font-family: cursive;
+  font-size: 35px;
  }
 
 div {
@@ -15,18 +19,28 @@ div {
   height: 5px;
   background-color: black;
   margin: 6px 0;
-  /* float:right; */
  }
 
  main {
    text-align: center;
    background-color: rgb(35, 108, 172);
+   color: rgb(4, 4, 55);
+   font-family: fantasy;
+   font-size: 20px;
    padding: 100px;
+ }
+ 
+ body {
+   background-color: rgb(35, 108, 172);
+   color: rgb(4, 4, 55);
+   font-family: cursive;
+   text-align: center;
  }
 
  footer {
   background-color: cornflowerblue;
   color: rgb(4, 4, 55);
+  
  }
 /* https://www.w3schools.com/howto/howto_css_circles.asp */
  .dot {
@@ -35,7 +49,7 @@ div {
   background-color: #bbb;
   border-radius: 50%;
   display: inline-block;
-  margin-left: 112px;
+  margin-left: 100px;
   margin-right: 200px;
   /* position: fixed; */
   /* vertical-align: middle; */

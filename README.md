@@ -136,11 +136,11 @@ Number and name of feature: #4
 
 Estimate of time needed to complete: 2hr
 
-Start time: 6:30pm
+Start time: 6:30pm, 7:00am
 
-Finish time: 7:30pm
+Finish time: 7:30pm, 8:00am
 
-Actual time needed to complete: 
+Actual time needed to complete: 2hr
 
 Number and name of feature: #5 
 

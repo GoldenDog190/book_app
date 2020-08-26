@@ -1,15 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <%- include('../../layout/head') %>
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/reset.css">
-    <link rel="stylesheet" href="/base.css">
-    <link rel="stylesheet" href="/layout-float.css">
-    <link rel="stylesheet" href="/module.css">
-  </head>
+ <body>
+  <%- include('../../layout/header') %>
   <h1>Results</h1>
   <% newBookArr %>
   <ul>
@@ -31,6 +24,6 @@
     </form>
     <% } %>
   </ul>
-  
+  <%- include('../../layout/footer') %>
 </body>
 </html>
