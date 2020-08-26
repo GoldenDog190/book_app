@@ -5,6 +5,7 @@ const express = require('express');
 require('dotenv').config();
 const superagent = require('superagent');
 const pg = require('pg');
+const methodOverride = require('method-override');
 
 //global varables
 const app = express();
@@ -12,6 +13,8 @@ const PORT = process.env.PORT || 3001;
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({extended: true}));
+app.use(methodOverride('_method'));
+
 
 const client = new pg.Client(process.env.DATABASE_URL);
 client.on('error', console.error);
@@ -20,12 +23,17 @@ client.on('error', console.error);
 app.get('/books/:id', showSingleBook);
 app.post('/books', newBooks);
 app.post('/searches', getBooksData);
+app.put('/books/:id', updateBooks);
 
 app.get('/', (request, response) => {
   client.query('SELECT * FROM books')
   .then(result => {
     console.log(result);
-    response.render('pages/index', {books:result.rows});
+    client.query('SELECT DISTINCT bookshelf FROM books')
+    .then(distinct => {
+      console.log(distinct.rows);
+      response.render('pages/index', {books:result.rows, bookshelfs:distinct.rows});
+    })
   })
 });
 
@@ -33,6 +41,15 @@ app.get('/searches/new', (request, response) => {
   response.render('pages/searches/new');
 
 });
+
+function updateBooks(request, response){
+   const SQL = 'UPDATE books SET author= $1, title=$2,isbn=$3, img_url=$4, description=$5 WHERE id=$6;'
+  const values = [request.body.author, request.body.title, request.body.isbn, request.body.img_url, request.body.description, request.params.id];
+  client.query(SQL, values)
+  .then((result) => {
+    response.redirect('/');
+  })
+}
 
 function showSingleBook(request, response){
  client.query('SELECT * FROM books WHERE id=$1', [request.params.id])
@@ -99,6 +116,7 @@ this.img_url = img_url;
 this.description = bookJsonData.volumeInfo.description;
 this.isbn = bookJsonData.volumeInfo.industryIdentifiers[1] ? bookJsonData.volumeInfo.industryIdentifiers[1].industryIdentifiers : '';
 }
+
 
 //start app
 client.connect()

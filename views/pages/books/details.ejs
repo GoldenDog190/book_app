@@ -7,3 +7,14 @@
     <p><%= book.description %></p>
 
 </section>
+
+<button class="buttonupdate">Update Details</button>
+  
+
+
+<form action="/<%= book.id %>?_method=DELETE" method="POST>
+  <fieldset>
+    <label for="deletebook"></label>
+  <input type="submit" value="delete book">
+  </fieldset>
+</form>
