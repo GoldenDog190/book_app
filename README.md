@@ -12,18 +12,19 @@ This app provides the user a way to reasearch their favorite books by title and 
 
 ## Getting Started
 <!-- What are the steps that a user must take in order to build this app on their own machine and get it running? -->
-The user must scaffold all necessary files, including for the EJS files, CSS, view file, js file, and public folder. Set up the server, and install express, superagent, dotenv, and ejs. Also, put the esclintrc file, gitignore, and json files.
+The user must scaffold all necessary files, including for the EJS files, CSS, view file, js file, and public folder. Set up the server, and install express, superagent, dotenv, pg, and ejs. Also, put the esclintrc file, gitignore, and json files.
 
 ## Architecture
 <!-- Provide a detailed description of the application design. What technologies (languages, libraries, etc) you're using, and any other relevant design information. -->
-This app has had express, superagent, dotenv, and ejs added to it. Uses EJS, JavaScript, CSS, and HTML.
+This app has had express, superagent, dotenv, pg, and ejs added to it. Uses EJS, JavaScript, CSS, and HTML.
 
 ## Change Log
 <!-- Use this area to document the iterative changes made to your application as each feature is successfully implemented. Use time stamps. Here's an examples:
 
 01-01-2001 4:59pm - Application now has a fully-functional express server, with GET and POST routes for the book resource. -->
 
-08-24-2020 7:15 - Application has all necessary folders, files, installments, and has the google book API, along with the route and contructor.
+08-24-2020 7:15pm - Application has all necessary folders, files, installments, and has the google book API, along with the route and contructor.
+08-25-2020 7:35pm - Added more files for books, installed pg, added datatable, and another form to add more books.
 
 
 ## Credits and Collaborations
@@ -122,7 +123,7 @@ Estimate of time needed to complete: 2hr
 
 Start time: 5:50pm
 
-Finish time: 
+Finish time: 7:30pm
 
 Actual time needed to complete: 
 
@@ -130,7 +131,7 @@ Number and name of feature: #4
 
 Estimate of time needed to complete: 2hr
 
-Start time: 
+Start time: 6:30pm
 
 Finish time: 
 
