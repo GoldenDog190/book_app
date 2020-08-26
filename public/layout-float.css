@@ -60,4 +60,8 @@ div {
    color: rgb(4, 4, 55);
    text-align: center;
  }
+
+ .update {
+  display: none;
+ }
 /* } */

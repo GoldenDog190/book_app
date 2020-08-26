@@ -12,7 +12,7 @@ This app provides the user a way to reasearch their favorite books by title and 
 
 ## Getting Started
 <!-- What are the steps that a user must take in order to build this app on their own machine and get it running? -->
-The user must scaffold all necessary files, including for the EJS files, CSS, view file, js file, and public folder. Set up the server, and install express, superagent, dotenv, pg, and ejs. Also, put the esclintrc file, gitignore, and json files.
+The user must scaffold all necessary files, including for the EJS files, CSS, view file, js file, and public folder. Set up the server, and install express, superagent, dotenv, pg, method-override, and ejs. Also, put the esclintrc file, gitignore, and json files.
 
 ## Architecture
 <!-- Provide a detailed description of the application design. What technologies (languages, libraries, etc) you're using, and any other relevant design information. -->
@@ -130,7 +130,7 @@ Start time: 5:50pm
 
 Finish time: 7:30pm
 
-Actual time needed to complete: 
+Actual time needed to complete: 1hr 40min
 
 Number and name of feature: #4 
 
@@ -160,7 +160,7 @@ Number and name of feature: #1
 
 Estimate of time needed to complete: 2hr
 
-Start time: 
+Start time: 2:00pm
 
 Finish time: 
 
