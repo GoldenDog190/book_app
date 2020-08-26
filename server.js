@@ -4,6 +4,7 @@
 const express = require('express');
 require('dotenv').config();
 const superagent = require('superagent');
+const pg = require('pg');
 
 //global varables
 const app = express();
@@ -11,11 +12,18 @@ const PORT = process.env.PORT || 3001;
 app.use(express.static('public'));
 app.use(express.urlencoded({extended: true}));
 
+const client = new pg.Client(process.env.DATABASE_URL);
+client.on('error', console.error);
+
 //express configs
 app.set('view engine', 'ejs');
 
 app.get('/', (request, response) => {
-  response.render('pages/index');
+  client.query('SELECT * FROM books')
+  .then(result => {
+    console.log(result);
+    response.render('pages/index', {books:result.rows});
+  })
 });
 
 app.get('/searches/new', (request, response) => {
@@ -23,6 +31,16 @@ app.get('/searches/new', (request, response) => {
 
 });
 
+app.get('/books/:id', showSingleBook);
+function showSingleBook(request, response){
+ client.query('SELECT * FROM books WHERE id=$1', [request.params.id])
+ .then(result => {
+   response.render('pages/books/show', {book:result.rows[0]});
+ });
+}
+
+app.post('/books', );
+function 
 
 //route
 app.post('/searches', getBooksData);
@@ -54,7 +72,7 @@ function getBooksData(request, response){
 
 //constructor
 function Books (bookJsonData) {
-  //console.log(bookJsonData.volumeInfo);
+  console.log(bookJsonData.volumeInfo);
 this.title = bookJsonData.volumeInfo.title;
 this.author = bookJsonData.volumeInfo.authors;
 let img_url = bookJsonData.volumeInfo.imageLinks && bookJsonData.volumeInfo.imageLinks.thumbnail ? bookJsonData.volumeInfo.imageLinks. thumbnail : 'https://i.imgur.com/J5LVHEL.jpg';
@@ -65,4 +83,8 @@ this.isbn = bookJsonData.volumeInfo.industryIdentifiers[1] ? bookJsonData.volume
 }
 
 //start app
-app.listen(PORT, () => console.log(`running the server on PORT : ${PORT} working`));
+client.connect()
+.then( () => {
+  app.listen(PORT, () => console.log(`running the server on PORT : ${PORT} working`));
+
+})

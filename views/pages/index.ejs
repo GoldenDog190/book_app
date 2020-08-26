@@ -17,16 +17,11 @@
     <div></div>
   </header>
   <main>
-    <h2>Search Results</h2>
-    <img src="http://placehold.it/200x200" alt="">
-      <h3>Book Title</h3>
-      <h4>Author Name</h4>
-      <p>Book description</p>
+    <h2>Book Collection: You have <%= books.length %> books</h2>
+    <% books.forEach(book => { %>
+     <%- include('books/details', {book:book}) %>
+    <% }) %>
 
-    <img src="http://placehold.it/200x200" alt="">
-     <h3>Book Title</h3>
-     <h4>Author Name</h4>
-     <p>Book description</p>
   </main> 
 
 <footer>
