@@ -53,9 +53,10 @@ function newBooks(request, response){
   const SQL = `INSERT INTO books (author, title, isbn, img_url, description) VALUES ($1, $2, $3, $4, $5)`;
   const bookArray = [author, title, isbn, img_url, description];
 
-  client.query(SQL, bookArray).then(() => {
-    throw new Error('error');
-    response.redirect('/books');
+  client.query(SQL, bookArray)
+  .then(() => {
+    response.redirect('/');
+    
   }).catch((error) => handleError(error, response));
 
 }
