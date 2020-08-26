@@ -146,9 +146,9 @@ Number and name of feature: #5
 
 Estimate of time needed to complete: 2hr
 
-Start time: 
+Start time: 8:00am
 
-Finish time: 
+Finish time: 9:00am
 
 Actual time needed to complete:
 
