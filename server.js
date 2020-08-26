@@ -39,8 +39,30 @@ function showSingleBook(request, response){
  });
 }
 
-app.post('/books', );
-function 
+app.post('/books', addBookForm);
+function addBookForm(request, response){
+  response.render('pages/books/show');
+}
+
+app.get('/books', newBooks)
+function newBooks(request, response){
+  console.log(request.body);
+  const {author, title, isbn, img_url, description} = request.body;
+
+  const SQL = `INSERT INTO books (author, title, isbn, img_url, description) VALUES ($1, $2, $3, $4, $5)`;
+  const bookArray = [author, title, isbn, img_url, description];
+
+  client.query(SQL, bookArray).then(() => {
+    throw new Error('error');
+    response.redirect('/books');
+  }).catch((error) => handleError(error, response));
+
+}
+
+function handleError(error, response){
+  console.error(error);
+  response.render('pages/errors', {error});
+}
 
 //route
 app.post('/searches', getBooksData);
