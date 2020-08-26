@@ -21,7 +21,16 @@
         <p><%= newBookArr[i].isbn %></p>
         <p><%= newBookArr[i].description %></p>
     </li>
+  <!-- Got help from Jack Nelson-->
+    <form action="/books" method="POST">
+      <fieldset>
+        <label for="addbook">Add another book to your collection:</label>
+        <input style="display: none;" type="text" name="book"></input>
+      <input type="submit" value="Select this book">
+      </fieldset>
+    </form>
     <% } %>
   </ul>
+  
 </body>
 </html>

@@ -39,8 +39,10 @@ function showSingleBook(request, response){
  });
 }
 
-app.post('/books', );
-function 
+app.post('/books', addBookForm);
+function addBookForm(request, response){
+  response.render('pages/books/show');
+}
 
 //route
 app.post('/searches', getBooksData);
