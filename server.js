@@ -10,13 +10,17 @@ const pg = require('pg');
 const app = express();
 const PORT = process.env.PORT || 3001;
 app.use(express.static('public'));
+app.set('view engine', 'ejs');
 app.use(express.urlencoded({extended: true}));
 
 const client = new pg.Client(process.env.DATABASE_URL);
 client.on('error', console.error);
 
 //express configs
-app.set('view engine', 'ejs');
+app.get('/books/:id', showSingleBook);
+app.post('/books', addBookForm);
+app.get('/books', newBooks);
+app.post('/searches', getBooksData);
 
 app.get('/', (request, response) => {
   client.query('SELECT * FROM books')
@@ -31,7 +35,6 @@ app.get('/searches/new', (request, response) => {
 
 });
 
-app.get('/books/:id', showSingleBook);
 function showSingleBook(request, response){
  client.query('SELECT * FROM books WHERE id=$1', [request.params.id])
  .then(result => {
@@ -39,12 +42,10 @@ function showSingleBook(request, response){
  });
 }
 
-app.post('/books', addBookForm);
 function addBookForm(request, response){
   response.render('pages/books/show');
 }
 
-app.get('/books', newBooks)
 function newBooks(request, response){
   console.log(request.body);
   const {author, title, isbn, img_url, description} = request.body;
@@ -65,7 +66,6 @@ function handleError(error, response){
 }
 
 //route
-app.post('/searches', getBooksData);
 
 function getBooksData(request, response){
   //console.log(request.body);

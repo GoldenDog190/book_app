@@ -24,7 +24,12 @@ This app has had express, superagent, dotenv, pg, and ejs added to it. Uses EJS,
 01-01-2001 4:59pm - Application now has a fully-functional express server, with GET and POST routes for the book resource. -->
 
 08-24-2020 7:15pm - Application has all necessary folders, files, installments, and has the google book API, along with the route and contructor.
+
 08-25-2020 7:35pm - Added more files for books, installed pg, added datatable, and another form to add more books.
+
+08-26-2020 pm - 
+
+08-27-2020 pm - 
 
 
 ## Credits and Collaborations
@@ -78,11 +83,11 @@ Number and name of feature: #5
 
 Estimate of time needed to complete: 2hr
 
-Start time: 6:15pm
+Start time: 6:15pm, 7:00am
 
-Finish time: 6:45pm
+Finish time: 6:45pm, 9:00am
 
-Actual time needed to complete: 30min
+Actual time needed to complete: 2hr 30min
 
 Number and name of feature: #6 
 
@@ -111,7 +116,7 @@ Number and name of feature: #2
 
 Estimate of time needed to complete: 2hr
 
-Start time: 4:30
+Start time: 4:30pm
 
 Finish time: 5:50pm
 
@@ -133,7 +138,7 @@ Estimate of time needed to complete: 2hr
 
 Start time: 6:30pm
 
-Finish time: 
+Finish time: 7:30pm
 
 Actual time needed to complete: 
 
@@ -149,3 +154,47 @@ Actual time needed to complete:
 
 
 //======================
+
+Time Estimate Lab 13
+Number and name of feature: #1 
+
+Estimate of time needed to complete: 2hr
+
+Start time: 
+
+Finish time: 
+
+Actual time needed to complete: 
+
+Number and name of feature: #2
+
+Estimate of time needed to complete: 2hr
+
+Start time: 
+
+Finish time: 
+
+Actual time needed to complete: 
+
+//===================================
+
+Time Estimate Lab 14
+Number and name of feature: #1 
+
+Estimate of time needed to complete: 2hr
+
+Start time: 
+
+Finish time:
+
+Actual time needed to complete: 
+
+Number and name of feature: #2
+
+Estimate of time needed to complete: 2hr
+
+Start time: 
+
+Finish time: 
+
+Actual time needed to complete: 

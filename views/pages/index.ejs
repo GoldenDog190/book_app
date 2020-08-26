@@ -1,21 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="reset.css">
-  <link rel="stylesheet" href="base.css">
-  <link rel="stylesheet" href="layout-float.css">
-  <link rel="stylesheet" href="module.css">
-</head>
+  <%- include('../layout/head') %>
+
 <body>
-  <header>
-    <h1>Best Books!</h1>
-    <div></div>
-    <div></div>
-    <div></div>
-  </header>
+  <%- include('../layout/header') %>
+
   <main>
     <h2>Book Collection: You have <%= books.length %> books</h2>
     <% books.forEach(book => { %>
@@ -24,13 +13,7 @@
 
   </main> 
 
-<footer>
-  <!-- https://www.w3schools.com/howto/howto_css_circles.asp -->
-<span class="dot"></span>
-<span class="dot"></span>
-<span class="dot"></span>
-<span class="dot"></span>
-</footer>
+  <%- include('../layout/footer') %>
 
 </body>
 </html>

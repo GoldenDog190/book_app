@@ -1,21 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/reset.css">
-  <link rel="stylesheet" href="/base.css">
-  <link rel="stylesheet" href="/layout-float.css">
-  <link rel="stylesheet" href="/module.css">
-  <title>Document</title>
-</head>
+  <%- include('../../layout/head') %>
+
 <body class="form-pg">
-  <header>
-    <h1>Best Books</h1>
-    <div></div>
-    <div></div>
-    <div></div>
-  </header>
+  <%- include('../../layout/header') %>
 
   <main>
     <form action="/searches" method="POST">
@@ -31,12 +19,7 @@
      </fieldset>
     </form>
   </main>
-  <footer>
-    <!-- https://www.w3schools.com/howto/howto_css_circles.asp -->
-    <span class="dot"></span>
-    <span class="dot"></span>
-    <span class="dot"></span>
-    <span class="dot"></span>
-  </footer>
+  <%- include('../../layout/footer') %>
+
 </body>
 </html>
