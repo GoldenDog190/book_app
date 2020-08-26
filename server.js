@@ -18,8 +18,7 @@ client.on('error', console.error);
 
 //express configs
 app.get('/books/:id', showSingleBook);
-app.post('/books', addBookForm);
-app.get('/books', newBooks);
+app.post('/books', newBooks);
 app.post('/searches', getBooksData);
 
 app.get('/', (request, response) => {
@@ -42,10 +41,6 @@ function showSingleBook(request, response){
  });
 }
 
-function addBookForm(request, response){
-  response.render('pages/books/show');
-}
-
 function newBooks(request, response){
   console.log(request.body);
   const {author, title, isbn, img_url, description} = request.body;
@@ -56,7 +51,7 @@ function newBooks(request, response){
   client.query(SQL, bookArray)
   .then(() => {
     response.redirect('/');
-    
+
   }).catch((error) => handleError(error, response));
 
 }
