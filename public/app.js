@@ -12,9 +12,14 @@ function revealForm(eventObject){
 }
 
 // function hideDeleteButton(){
-//   if($('#deletebutton').find(){
-//     $('#deletebutton').show();
-//   });
+//   $('#deletebutton').hide('/');
+//   const button = id;
+//   function showDeleteButton(){
+//     if($('#deletebutton').find.text()=== button){
+//       $('#deletebutton').show('/books/1');
+//     };
+
+//   }
   
 
-//}
+// }
