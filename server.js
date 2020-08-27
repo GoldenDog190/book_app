@@ -24,6 +24,7 @@ app.get('/books/:id', showSingleBook);
 app.post('/books', newBooks);
 app.post('/searches', getBooksData);
 app.put('/books/:id', updateBooks);
+app.delete('/books/:id', deleteBooks);
 
 app.get('/', (request, response) => {
   client.query('SELECT * FROM books')
@@ -46,24 +47,40 @@ function updateBooks(request, response){
    const SQL = 'UPDATE books SET author= $1, title=$2,isbn=$3, img_url=$4, description=$5 WHERE id=$6;'
   const values = [request.body.author, request.body.title, request.body.isbn, request.body.img_url, request.body.description, request.params.id];
   client.query(SQL, values)
-  .then((result) => {
+   .then((result) => {
     response.redirect('/');
   })
 }
 
+function deleteBooks(request, response){
+  const {id} = request.params;
+  const SQL = 'DELETE FROM books WHERE id=$1';
+  client.query(SQL, [id])
+   .then( () => {
+     response.redirect('/');
+   });
+
+}
+
 function showSingleBook(request, response){
+  console.log(request.params.id);
  client.query('SELECT * FROM books WHERE id=$1', [request.params.id])
  .then(result => {
-   response.render('pages/books/show', {book:result.rows[0]});
+  client.query('SELECT DISTINCT bookshelf FROM books')
+  .then(distinct => {
+
+    console.log(result.rows);
+    response.render('pages/books/show', {book:result.rows[0], bookshelf:distinct.rows});
+  })
  });
 }
 
 function newBooks(request, response){
   console.log(request.body);
-  const {author, title, isbn, img_url, description} = request.body;
+  const {author, title, isbn, img_url, description, bookshelf} = request.body;
 
-  const SQL = `INSERT INTO books (author, title, isbn, img_url, description) VALUES ($1, $2, $3, $4, $5)`;
-  const bookArray = [author, title, isbn, img_url, description];
+  const SQL = `INSERT INTO books (author, title, isbn, img_url, description, bookshelf) VALUES ($1, $2, $3, $4, $5, $6)`;
+  const bookArray = [author, title, isbn, img_url, description, bookshelf];
 
   client.query(SQL, bookArray)
   .then(() => {

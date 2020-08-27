@@ -10,3 +10,16 @@ function revealForm(eventObject){
     arrayForm[i].setAttribute('style', 'display: block');
   }
 }
+
+// function hideDeleteButton(){
+//   $('#deletebutton').hide('/');
+//   const button = id;
+//   function showDeleteButton(){
+//     if($('#deletebutton').find.text()=== button){
+//       $('#deletebutton').show('/books/1');
+//     };
+
+//   }
+  
+
+// }

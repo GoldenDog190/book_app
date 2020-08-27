@@ -1,6 +1,6 @@
 <section>
-
-  <img src="<%= book.img_url %>" alt="">
+<a href="books/<%= book.id %>">
+  <img src="<%= book.img_url %>" alt=""></a>
     <h3><%= book.title %></h3>
     <h3><%= book.author %></h3>
     <h3><%= book.isbn %></h3>
@@ -10,11 +10,6 @@
 
 <button class="buttonupdate">Update Details</button>
   
-
-
-<form action="/<%= book.id %>?_method=DELETE" method="POST>
-  <fieldset>
-    <label for="deletebook"></label>
+<form action="/books/<%= book.id %>?_method=DELETE" method="POST" id="deletebutton">
   <input type="submit" value="delete book">
-  </fieldset>
 </form>
