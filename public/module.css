@@ -5,4 +5,12 @@ img {
   padding-bottom: 15px;
 }
 
+.update {
+  display: none;
+ }
+
+ /* #deletebutton {
+   display: none;
+ } */
+
 /* } */

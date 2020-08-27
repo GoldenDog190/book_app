@@ -10,3 +10,4 @@ function revealForm(eventObject){
     arrayForm[i].setAttribute('style', 'display: block');
   }
 }
+
