@@ -79,15 +79,16 @@ function newBooks(request, response){
   console.log(request.body);
   const {author, title, isbn, img_url, description, bookshelf} = request.body;
 
-  const SQL = `INSERT INTO books (author, title, isbn, img_url, description, bookshelf) VALUES ($1, $2, $3, $4, $5, $6)`;
+  const SQL = `INSERT INTO books (author, title, isbn, img_url, description, bookshelf) VALUES ($1, $2, $3, $4, $5, $6) RETURNING id`;
   const bookArray = [author, title, isbn, img_url, description, bookshelf];
 
   client.query(SQL, bookArray)
-  .then(() => {
-    response.redirect('/books/1');
+  .then((result) => {
+    console.log('NEW BOOK ID',result);
+    response.redirect(`/books/${result.rows[0].id}`);
 
-  }).catch((error) => handleError(error, response));
-
+  })
+  .catch((error) => handleError(error, response));
 }
 
 function handleError(error, response){
