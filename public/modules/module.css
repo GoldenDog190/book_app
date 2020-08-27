@@ -1,4 +1,4 @@
-@media only screen and (min-width: 960px) {
+@media only screen and (min-width: 760px) {
 
 img {
   padding-top: 25px;
@@ -51,6 +51,37 @@ div {
   margin-bottom: 10px;
   margin-top: 5px;
    /* display: none; */
+ }
+
+ h2 {
+   font-size: 30px;
+   color: rgb(4, 4, 55);
+   background-color: darkslateblue;
+   padding: 40px;
+ }
+
+ ul {
+   background-color: darkgray;
+   font-family: fantasy;
+ }
+
+ fieldset {
+   background-color: darkslateblue;
+   padding: 1px;
+   margin-top: 5px;
+   font-family: fantasy;
+ }
+
+ legend {
+   background-color:darkgray;
+   font-family: fantasy;
+   font-size: 30px;
+   padding: 50px;
+   margin-bottom: 10px;
+ }
+
+ .updatedelete {
+   background-color: darkslateblue;
  }
 
 }

@@ -1,4 +1,4 @@
-@media only screen and (min-width: 960px) {
+@media only screen and (min-width: 760px) {
 body {
   background-color: rgb(35, 108, 172);
   color: rgb(4, 4, 55);
@@ -18,7 +18,7 @@ main {
   background-color: rgb(35, 108, 172);
   color: rgb(4, 4, 55);
   font-family: fantasy;
-  font-size: 20px;
+  font-size: 18px;
   padding: 100px;
   }
 
@@ -30,7 +30,7 @@ main {
  
   section {
     text-align: center;
-    background-color: rgb(35, 108, 172);
+    background-color:darkgray;
     color: rgb(4, 4, 55);
     font-family: fantasy;
     font-size: 20px;
