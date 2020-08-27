@@ -84,7 +84,7 @@ function newBooks(request, response){
 
   client.query(SQL, bookArray)
   .then(() => {
-    response.redirect('/');
+    response.redirect('/books/1');
 
   }).catch((error) => handleError(error, response));
 
