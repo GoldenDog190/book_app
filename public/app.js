@@ -11,3 +11,10 @@ function revealForm(eventObject){
   }
 }
 
+// function hideDeleteButton(){
+//   if($('#deletebutton').find(){
+//     $('#deletebutton').show();
+//   });
+  
+
+//}

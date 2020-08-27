@@ -63,18 +63,24 @@ function deleteBooks(request, response){
 }
 
 function showSingleBook(request, response){
+  console.log(request.params.id);
  client.query('SELECT * FROM books WHERE id=$1', [request.params.id])
  .then(result => {
-   response.render('pages/books/show', {book:result.rows[0]});
+  client.query('SELECT DISTINCT bookshelf FROM books')
+  .then(distinct => {
+
+    console.log(result.rows);
+    response.render('pages/books/show', {book:result.rows[0], bookshelf:distinct.rows});
+  })
  });
 }
 
 function newBooks(request, response){
   console.log(request.body);
-  const {author, title, isbn, img_url, description} = request.body;
+  const {author, title, isbn, img_url, description, bookshelf} = request.body;
 
-  const SQL = `INSERT INTO books (author, title, isbn, img_url, description) VALUES ($1, $2, $3, $4, $5)`;
-  const bookArray = [author, title, isbn, img_url, description];
+  const SQL = `INSERT INTO books (author, title, isbn, img_url, description, bookshelf) VALUES ($1, $2, $3, $4, $5, $6)`;
+  const bookArray = [author, title, isbn, img_url, description, bookshelf];
 
   client.query(SQL, bookArray)
   .then(() => {
