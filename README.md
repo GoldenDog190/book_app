@@ -12,7 +12,7 @@ This app provides the user a way to research their favorite books by title and a
 
 ## Getting Started
 <!-- What are the steps that a user must take in order to build this app on their own machine and get it running? -->
-The user must scaffold all necessary files, including for the EJS files, CSS, view file, js file, and public folder. Set up the server, and install express, superagent, dotenv, pg, method-override, and ejs. Also, put the esclintrc file, gitignore, and json files.
+Scaffold all necessary files, including for the EJS files, CSS, view file, js file, and public folder. Set up the server, and install express, superagent, dotenv, pg, method-override, and ejs. Also, put the esclintrc file, gitignore, and json files.
 
 ## Architecture
 <!-- Provide a detailed description of the application design. What technologies (languages, libraries, etc) you're using, and any other relevant design information. -->
