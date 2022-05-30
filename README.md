@@ -8,7 +8,7 @@ Book App
 
 ## Overview
 <!-- Provide a high level overview of what this application is and why you are building it, beyond the fact that it's an assignment for a Code 301 class. (i.e. What's your problem domain?) -->
-This app provides the user a way to reasearch their favorite books by title and author.
+This app provides the user a way to research their favorite books by title and author.
 
 ## Getting Started
 <!-- What are the steps that a user must take in order to build this app on their own machine and get it running? -->
@@ -26,10 +26,6 @@ This app has had express, superagent, dotenv, pg, and ejs added to it. Uses EJS,
 08-24-2020 7:15pm - Application has all necessary folders, files, installments, and has the google book API, along with the route and contructor.
 
 08-25-2020 7:35pm - Added more files for books, installed pg, added datatable, and another form to add more books.
-
-08-26-2020 pm - 
-
-08-27-2020 pm - 
 
 
 ## Credits and Collaborations
@@ -175,26 +171,3 @@ Start time: 5:00pm
 Finish time: 6:45pm
 
 Actual time needed to complete: 1hr 45min
-
-//===================================
-
-Time Estimate Lab 14
-Number and name of feature: #1 
-
-Estimate of time needed to complete: 2hr
-
-Start time: 
-
-Finish time:
-
-Actual time needed to complete: 
-
-Number and name of feature: #2
-
-Estimate of time needed to complete: 2hr
-
-Start time: 
-
-Finish time: 
-
-Actual time needed to complete: 
